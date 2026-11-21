@@ -59,7 +59,7 @@
     <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-14 flex flex-col justify-center">
 
         <!-- ==========================================================================
-             HALAMAN 0: BERANDA UTAMA (SESUAI SKETSA: JUDUL + 4 KOTAK MENU 2x2)
+             HALAMAN 0: BERANDA UTAMA (JUDUL + 4 KOTAK MENU 2x2)
              ========================================================================== -->
         <section id="page-beranda" class="space-y-10 sm:space-y-12">
             <!-- Judul Utama di Tengah -->
@@ -76,7 +76,7 @@
                 </p>
             </div>
 
-            <!-- Grid 2x2 Menu Utama (Sesuai Susunan Sketsa) -->
+            <!-- Grid 2x2 Menu Utama -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
                 
                 <!-- 1. Kotak Kiri Atas: Sumber Belajar -->
@@ -155,7 +155,7 @@
         </section>
 
         <!-- ==========================================================================
-             HALAMAN 1: SUMBER BELAJAR (KOSONG - SIAP DIISI MATERI ANDA)
+             HALAMAN 1: SUMBER BELAJAR (MODUL & VIDEO TERBUKA LANGSUNG DI WEB)
              ========================================================================== -->
         <section id="page-sumber-belajar" class="hidden space-y-6">
             <!-- Tombol Kembali -->
@@ -177,54 +177,100 @@
                 </div>
             </div>
 
-            <!-- WADAH MATERI SUMBER BELAJAR: Silakan masukkan kartu/tautan materi Anda di dalam div di bawah ini -->
+            <!-- WADAH MATERI SUMBER BELAJAR -->
             <div id="wadah-sumber-belajar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                <!-- Kartu Item 1 -->
-<a href="https://drive.google.com/file/d/1G0US44WzUrT6H4kHAYseW8-5W15APwBd/view?usp=sharing" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-    <div>
-        <span class="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
-            Modul
-        </span>
-        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-            Pengenalan PLTS
-        </h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
-            Pada modul ini kalian akan mengenal PLTS mulai dari pengertian awal sampai Komponen Utama PLTS.
-        </p>
-    </div>
-    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
-        <span>Buka Sekarang</span>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </div>
-</a>
-<a href="https://drive.google.com/file/d/1zFxj_8XXZsjwnr8SxPKKUawhHr6tSrIs/view?usp=sharing" target="_blank" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-    <div>
-        <span class="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
-            Video
-        </span>
-        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-            Komponen Utama Sistem PLTS (Panel Surya, SCC, Inverter, Baterai)
-        </h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
-            Di vidio ini Kalian akan belajar mengetahui apa saja komponen utama sistem plts mulai dari pengertian,bentuk serta simbol kelistrikan.
-        </p>
-    </div>
-    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
-        <span>Buka Sekarang</span>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </div>
-</a>
+                
+                <!-- Kartu Item 1: Modul (Membuka Modal PDF langsung di website) -->
+                <button type="button" onclick="bukaMateri('Modul', 'Pengenalan PLTS', 'https://drive.google.com/file/d/1G0US44WzUrT6H4kHAYseW8-5W15APwBd/preview')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
+                            <i class="fa-solid fa-file-pdf text-[11px]"></i>
+                            <span>Modul</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                            Pengenalan PLTS
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Pada modul ini kalian akan mengenal PLTS mulai dari pengertian awal sampai Komponen Utama PLTS.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
+                        <span>Baca Modul</span>
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                </button>
 
-                <div class="col-span-full rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-slate-900/40 p-12 text-center">
-                    <i class="fa-regular fa-folder-open text-2xl text-slate-400 mb-3"></i>
-                    <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Belum ada materi sumber belajar</p>
-                    <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Halaman ini siap Anda isi dengan modul, PDF, video, atau tautan materi PLTS.</p>
-                </div>
+                <!-- Kartu Item 2: Video (Memutar Video langsung di website) -->
+                <button type="button" onclick="bukaMateri('Video', 'Komponen Utama Sistem PLTS (Panel Surya, SCC, Inverter, Baterai)', 'https://drive.google.com/file/d/1zFxj_8XXZsjwnr8SxPKKUawhHr6tSrIs/preview')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
+                            <i class="fa-solid fa-circle-play text-[11px]"></i>
+                            <span>Video</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                            Komponen Utama Sistem PLTS (Panel Surya, SCC, Inverter, Baterai)
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Di vidio ini Kalian akan belajar mengetahui apa saja komponen utama sistem plts mulai dari pengertian,bentuk serta simbol kelistrikan.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
+                        <span>Putar Video</span>
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </button>
+
+                <!-- =====================================================================
+                     1. TEMPLATE TAMBAH SUMBER BELAJAR
+                     Cara pakai: Salin salah satu blok <button> di bawah, tempel di atas
+                     komentar ini, lalu ganti JUDUL, DESKRIPSI, dan LINK-nya.
+                     =====================================================================
+                
+                [OPSI A] KARTU MODUL (PDF / Dokumen Google Drive):
+                <button type="button" onclick="bukaMateri('Modul', 'JUDUL MODUL BARU', 'TEMPEL_LINK_GOOGLE_DRIVE_DI_SINI')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
+                            <i class="fa-solid fa-file-pdf text-[11px]"></i>
+                            <span>Modul</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                            JUDUL MODUL BARU
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis deskripsi singkat isi modul di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
+                        <span>Baca Modul</span>
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                </button>
+
+                [OPSI B] KARTU VIDEO (Google Drive / YouTube):
+                <button type="button" onclick="bukaMateri('Video', 'JUDUL VIDEO BARU', 'TEMPEL_LINK_DRIVE_ATAU_YOUTUBE_DI_SINI')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
+                            <i class="fa-solid fa-circle-play text-[11px]"></i>
+                            <span>Video</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                            JUDUL VIDEO BARU
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis deskripsi singkat isi video di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
+                        <span>Putar Video</span>
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </button>
+                ===================================================================== -->
             </div>
         </section>
 
         <!-- ==========================================================================
-             HALAMAN 2: GAME INTERAKTIF (KOSONG - SIAP DIISI GAME ANDA)
+             HALAMAN 2: GAME INTERAKTIF
              ========================================================================== -->
         <section id="page-game-interaktif" class="hidden space-y-6">
             <!-- Tombol Kembali -->
@@ -246,37 +292,57 @@
                 </div>
             </div>
 
-            <!-- WADAH GAME INTERAKTIF: Silakan masukkan item/tautan game Anda di dalam div di bawah ini -->
+            <!-- WADAH GAME INTERAKTIF -->
             <div id="wadah-game-interaktif" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                <!-- Kartu Item 1 -->
-<a href="https://satriantara-code.github.io/game-plts-smk/" target="_blank" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-    <div>
-        <span class="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
-            Game Interaktif
-        </span>
-        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-            Solar Architect
-        </h3>
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
-            Game ini akan mengetest pemahanmu tentang konsep dasar PLTS.
-        </p>
-    </div>
-    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
-        <span>Buka Sekarang</span>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </div>
-</a>
+                <!-- Kartu Item 1: Game Interaktif (Dibuka langsung di dalam website) -->
+                <button type="button" onclick="bukaMateri('Game Interaktif', 'Solar Architect', 'https://satriantara-code.github.io/game-plts-smk/')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-400 dark:hover:border-sky-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-sky-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-sky-400 mb-3">
+                            <i class="fa-solid fa-gamepad text-[11px]"></i>
+                            <span>Game Interaktif</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                            Solar Architect
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Game ini akan mengetest pemahanmu tentang konsep dasar PLTS.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-sky-600 dark:text-sky-400">
+                        <span>Mainkan Game</span>
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </button>
 
-                <div class="col-span-full rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-slate-900/40 p-12 text-center">
-                    <i class="fa-solid fa-gamepad text-2xl text-slate-400 mb-3"></i>
-                    <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Belum ada game interaktif</p>
-                    <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Halaman ini siap Anda isi dengan game edukasi atau simulasi PLTS.</p>
-                </div>
+                <!-- =====================================================================
+                     2. TEMPLATE TAMBAH GAME INTERAKTIF
+                     Cara pakai: Salin blok <button> di bawah, tempel di atas komentar ini,
+                     lalu ganti JUDUL GAME, DESKRIPSI, dan LINK GAME-nya.
+                     =====================================================================
+                <button type="button" onclick="bukaMateri('Game Interaktif', 'JUDUL GAME BARU', 'TEMPEL_LINK_GAME_DI_SINI')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-400 dark:hover:border-sky-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-sky-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-sky-400 mb-3">
+                            <i class="fa-solid fa-gamepad text-[11px]"></i>
+                            <span>Game Interaktif</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                            JUDUL GAME BARU
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis deskripsi singkat permainan atau simulasi di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-sky-600 dark:text-sky-400">
+                        <span>Mainkan Game</span>
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </button>
+                ===================================================================== -->
             </div>
         </section>
 
         <!-- ==========================================================================
-             HALAMAN 3: KELAS DIGITAL (KOSONG - SIAP DIISI KELAS ANDA)
+             HALAMAN 3: KELAS DIGITAL
              ========================================================================== -->
         <section id="page-kelas-digital" class="hidden space-y-6">
             <!-- Tombol Kembali -->
@@ -298,19 +364,67 @@
                 </div>
             </div>
 
-            <!-- WADAH KELAS DIGITAL: Silakan masukkan daftar kelas Anda di dalam div di bawah ini -->
+            <!-- WADAH KELAS DIGITAL -->
             <div id="wadah-kelas-digital" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                <!-- Slot Kosong (Hapus atau ganti blok ini saat Anda mulai mengisi kelas) -->
+                
+                <!-- Slot Kosong (Hapus kotak di bawah ini jika sudah mulai menambahkan kartu kelas) -->
                 <div class="col-span-full rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-slate-900/40 p-12 text-center">
                     <i class="fa-solid fa-chalkboard-user text-2xl text-slate-400 mb-3"></i>
                     <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Belum ada kelas digital</p>
                     <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Halaman ini siap Anda isi dengan tautan kelas atau jadwal pertemuan.</p>
                 </div>
+
+                <!-- =====================================================================
+                     3. TEMPLATE TAMBAH KELAS DIGITAL
+                     Cara pakai: Hapus kotak "Belum ada kelas digital" di atas, lalu salin
+                     salah satu blok di bawah dan tempel di dalam wadah ini.
+                     =====================================================================
+
+                [OPSI A] BUKA LANGSUNG DI DALAM WEBSITE (Untuk LKPD Interaktif, Padlet, Slide, dll):
+                <button type="button" onclick="bukaMateri('Kelas Digital', 'JUDUL KELAS / SESI', 'TEMPEL_LINK_MATERI_KELAS_DI_SINI')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-emerald-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-3">
+                            <i class="fa-solid fa-chalkboard-user text-[11px]"></i>
+                            <span>Kelas Digital</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                            JUDUL KELAS / SESI
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis jadwal pertemuan, topik diskusi, atau keterangan ruang kelas di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                        <span>Masuk Kelas</span>
+                        <i class="fa-solid fa-door-open"></i>
+                    </div>
+                </button>
+
+                [OPSI B] BUKA APLIKASI LUAR (Khusus Google Classroom, Google Meet, atau Zoom):
+                <a href="TEMPEL_LINK_GMEET_ZOOM_CLASSROOM_DI_SINI" target="_blank" rel="noopener noreferrer" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-emerald-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-3">
+                            <i class="fa-solid fa-video text-[11px]"></i>
+                            <span>Ruang Daring</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                            JUDUL RUANG KELAS DARING
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis jadwal sesi tatap muka maya atau kode kelas di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                        <span>Gabung Sesi</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+                ===================================================================== -->
             </div>
         </section>
 
         <!-- ==========================================================================
-             HALAMAN 4: BANK SOAL (KOSONG - SIAP DIISI SOAL ANDA)
+             HALAMAN 4: BANK SOAL
              ========================================================================== -->
         <section id="page-bank-soal" class="hidden space-y-6">
             <!-- Tombol Kembali -->
@@ -332,20 +446,99 @@
                 </div>
             </div>
 
-            <!-- WADAH BANK SOAL: Silakan masukkan paket soal Anda di dalam div di bawah ini -->
+            <!-- WADAH BANK SOAL -->
             <div id="wadah-bank-soal" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                <!-- Slot Kosong (Hapus atau ganti blok ini saat Anda mulai mengisi soal) -->
+                
+                <!-- Slot Kosong (Hapus kotak di bawah ini jika sudah mulai menambahkan paket soal) -->
                 <div class="col-span-full rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-slate-900/40 p-12 text-center">
                     <i class="fa-regular fa-file-lines text-2xl text-slate-400 mb-3"></i>
                     <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Belum ada paket soal</p>
                     <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Halaman ini siap Anda isi dengan latihan soal atau kuis evaluasi.</p>
                 </div>
+
+                <!-- =====================================================================
+                     4. TEMPLATE TAMBAH BANK SOAL
+                     Cara pakai: Hapus kotak "Belum ada paket soal" di atas, lalu salin
+                     blok <button> di bawah dan tempel di dalam wadah ini.
+                     Mendukung link Google Forms, Quizizz, Wordwall, maupun PDF Soal.
+                     =====================================================================
+                <button type="button" onclick="bukaMateri('Bank Soal', 'JUDUL PAKET SOAL', 'TEMPEL_LINK_GOOGLE_FORM_QUIZIZZ_PDF_DI_SINI')" class="text-left group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-violet-400 dark:hover:border-violet-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-violet-400/50">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 mb-3">
+                            <i class="fa-solid fa-file-lines text-[11px]"></i>
+                            <span>Bank Soal</span>
+                        </span>
+                        <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                            JUDUL PAKET SOAL
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                            Tulis jumlah soal, materi yang diujikan, atau batas waktu pengerjaan di sini.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-violet-600 dark:text-violet-400">
+                        <span>Mulai Kerjakan</span>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                </button>
+                ===================================================================== -->
             </div>
         </section>
 
     </main>
 
-    <!-- ==================== FOOTER (SESUAI KOTAK FOOTER DI BAGIAN BAWAH SKETSA) ==================== -->
+    <!-- ==================== MODAL VIEWER MATERI & GAME (LANGSUNG DI WEB) ==================== -->
+    <div id="modal-materi" onclick="tutupMateri(event)" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 transition-all">
+        <div id="modal-materi-dialog" class="w-full max-w-6xl rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col transition-all duration-200">
+            
+            <!-- Header Modal -->
+            <div class="px-4 sm:px-6 py-3 bg-slate-50 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <span id="modal-materi-badge" class="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                        <i id="modal-materi-icon" class="fa-solid fa-file-pdf"></i>
+                        <span id="modal-materi-kategori">Modul</span>
+                    </span>
+                    <h3 id="modal-materi-judul" class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white truncate">
+                        Judul Materi
+                    </h3>
+                </div>
+
+                <!-- Tombol Aksi Kanan: Layar Penuh, Tab Baru & Tutup -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <button id="modal-materi-fullscreen-btn" type="button" onclick="toggleLayarPenuhModal()" title="Perbesar / Perkecil Tampilan" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
+                        <i id="modal-materi-fullscreen-icon" class="fa-solid fa-expand text-[11px]"></i>
+                        <span id="modal-materi-fullscreen-text" class="hidden sm:inline">Layar Penuh</span>
+                    </button>
+                    <a id="modal-materi-external" href="#" target="_blank" rel="noopener noreferrer" title="Buka di tab baru jika pemutar terblokir browser" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
+                        <span>Tab Baru</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                    </a>
+                    <button type="button" onclick="tutupMateri()" aria-label="Tutup" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-rose-600 hover:bg-rose-50 dark:text-slate-400 dark:hover:text-rose-400 dark:hover:bg-rose-500/10 transition-colors">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Area Pemutar Video / Pembaca Modul / Game -->
+            <div id="modal-materi-body" class="relative w-full h-[78vh] sm:h-[84vh] bg-slate-950 transition-all duration-200">
+                <!-- Indikator Loading saat iframe dimuat -->
+                <div id="modal-materi-loader" class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-300 pointer-events-none">
+                    <i class="fa-solid fa-sun fa-spin text-2xl text-amber-400"></i>
+                    <p id="modal-materi-loader-text" class="text-xs sm:text-sm font-medium">Memuat materi pembelajaran...</p>
+                </div>
+
+                <!-- Iframe Embed -->
+                <iframe
+                    id="modal-materi-frame"
+                    src=""
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    class="relative z-10 w-full h-full border-0">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="w-full max-w-4xl mx-auto px-4 sm:px-6 pb-8">
         <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
             <div class="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-200">
@@ -364,7 +557,7 @@
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT NAVIGASI HALAMAN & TEMA ==================== -->
+    <!-- ==================== JAVASCRIPT NAVIGASI, MODAL MATERI & TEMA ==================== -->
     <script>
         // Daftar ID halaman yang tersedia
         const daftarHalaman = ['beranda', 'sumber-belajar', 'game-interaktif', 'kelas-digital', 'bank-soal'];
@@ -409,6 +602,200 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        /**
+         * Otomatis mengubah link Google Drive (/view atau /edit) menjadi mode /preview
+         * agar dapat diputar/dibaca langsung di dalam iframe website.
+         * @param {string} url - Tautan asli materi
+         * @returns {{embedUrl: string, externalUrl: string}}
+         */
+        function siapkanTautanMateri(url) {
+            try {
+                // Konversi otomatis link Google Drive (/view atau /edit) menjadi /preview
+                if (url.includes('drive.google.com/file/d/')) {
+                    const match = url.match(/\/file\/d\/([^/]+)/);
+                    if (match && match[1]) {
+                        const fileId = match[1];
+                        return {
+                            embedUrl: `https://drive.google.com/file/d/${fileId}/preview`,
+                            externalUrl: `https://drive.google.com/file/d/${fileId}/view?usp=sharing`
+                        };
+                    }
+                }
+
+                // Konversi otomatis link YouTube biasa (youtube.com/watch?v=... atau youtu.be/...) menjadi embed
+                if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+                    const ytMatch = url.match(/(?:v=|youtu\.be\/)([^&?/]+)/);
+                    if (ytMatch && ytMatch[1]) {
+                        const videoId = ytMatch[1];
+                        return {
+                            embedUrl: `https://www.youtube.com/embed/${videoId}`,
+                            externalUrl: `https://www.youtube.com/watch?v=${videoId}`
+                        };
+                    }
+                }
+
+                // Konversi otomatis link Google Forms agar tampil rapi di dalam modal
+                if (url.includes('docs.google.com/forms/') && url.includes('/viewform') && !url.includes('embedded=true')) {
+                    const separator = url.includes('?') ? '&' : '?';
+                    return {
+                        embedUrl: `${url}${separator}embedded=true`,
+                        externalUrl: url
+                    };
+                }
+
+                return { embedUrl: url, externalUrl: url };
+            } catch (error) {
+                return { embedUrl: url, externalUrl: url };
+            }
+        }
+
+        let isModalFullscreen = false;
+        let isCurrentGameModal = false;
+
+        /**
+         * Mengatur ukuran jendela modal (normal vs layar penuh)
+         */
+        function terapkanUkuranModal() {
+            const modalDialog = document.getElementById('modal-materi-dialog');
+            const modalBody = document.getElementById('modal-materi-body');
+            const fsIcon = document.getElementById('modal-materi-fullscreen-icon');
+            const fsText = document.getElementById('modal-materi-fullscreen-text');
+
+            if (!modalDialog || !modalBody) return;
+
+            if (isModalFullscreen) {
+                modalDialog.className = 'w-full h-full max-w-none rounded-none sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col transition-all duration-200';
+                modalBody.className = 'relative w-full flex-1 bg-slate-950 transition-all duration-200';
+                if (fsIcon) fsIcon.className = 'fa-solid fa-compress text-[11px]';
+                if (fsText) fsText.textContent = 'Perkecil';
+            } else {
+                const maxWidthClass = isCurrentGameModal ? 'max-w-7xl' : 'max-w-6xl';
+                modalDialog.className = `w-full ${maxWidthClass} rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col transition-all duration-200`;
+                modalBody.className = 'relative w-full h-[78vh] sm:h-[84vh] bg-slate-950 transition-all duration-200';
+                if (fsIcon) fsIcon.className = 'fa-solid fa-expand text-[11px]';
+                if (fsText) fsText.textContent = 'Layar Penuh';
+            }
+        }
+
+        /**
+         * Mengubah mode layar penuh pada modal materi/game
+         */
+        function toggleLayarPenuhModal() {
+            isModalFullscreen = !isModalFullscreen;
+            terapkanUkuranModal();
+        }
+
+        /**
+         * Membuka modal viewer untuk Modul, Video, Game, Kelas Digital, atau Bank Soal
+         * @param {string} kategori - Jenis konten ('Modul', 'Video', 'Game Interaktif', 'Kelas Digital', 'Bank Soal')
+         * @param {string} judul - Judul yang ditampilkan di header modal
+         * @param {string} url - Tautan konten
+         */
+        function bukaMateri(kategori, judul, url) {
+            const modal = document.getElementById('modal-materi');
+            const badge = document.getElementById('modal-materi-badge');
+            const icon = document.getElementById('modal-materi-icon');
+            const kategoriEl = document.getElementById('modal-materi-kategori');
+            const judulEl = document.getElementById('modal-materi-judul');
+            const externalLink = document.getElementById('modal-materi-external');
+            const loader = document.getElementById('modal-materi-loader');
+            const loaderText = document.getElementById('modal-materi-loader-text');
+            const frame = document.getElementById('modal-materi-frame');
+
+            if (!modal || !frame) return;
+
+            const { embedUrl, externalUrl } = siapkanTautanMateri(url);
+            const kategoriLower = (kategori || '').toLowerCase();
+            const isGame = kategoriLower.includes('game');
+            const isVideo = kategoriLower.includes('video');
+            const isKelas = kategoriLower.includes('kelas');
+            const isSoal = kategoriLower.includes('soal') || kategoriLower.includes('kuis');
+            isCurrentGameModal = isGame;
+
+            // Atur badge warna & ikon sesuai jenis konten
+            kategoriEl.textContent = kategori;
+            judulEl.textContent = judul;
+            externalLink.href = externalUrl;
+
+            if (isGame) {
+                badge.className = 'shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-100 dark:bg-sky-500/15 text-sky-700 dark:text-sky-300';
+                icon.className = 'fa-solid fa-gamepad';
+                loaderText.textContent = 'Memuat game interaktif...';
+            } else if (isKelas) {
+                badge.className = 'shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-100 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+                icon.className = 'fa-solid fa-chalkboard-user';
+                loaderText.textContent = 'Memuat ruang kelas digital...';
+            } else if (isSoal) {
+                badge.className = 'shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-violet-100 dark:bg-violet-500/15 text-violet-700 dark:text-violet-300';
+                icon.className = 'fa-solid fa-file-lines';
+                loaderText.textContent = 'Memuat paket soal evaluasi...';
+            } else if (isVideo) {
+                badge.className = 'shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300';
+                icon.className = 'fa-solid fa-circle-play';
+                loaderText.textContent = 'Memuat video pembelajaran...';
+            } else {
+                badge.className = 'shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300';
+                icon.className = 'fa-solid fa-file-pdf';
+                loaderText.textContent = 'Memuat modul pembelajaran...';
+            }
+
+            // Otomatis layar penuh di ponsel saat membuka Game agar kontrol game leluasa
+            isModalFullscreen = isGame && window.innerWidth < 640;
+            terapkanUkuranModal();
+
+            // Tampilkan loader & muat URL ke dalam iframe
+            if (loader) loader.classList.remove('hidden');
+            frame.src = embedUrl;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        /**
+         * Menutup modal viewer dan menghentikan pemutaran video/game di dalamnya
+         * @param {Event} [event] - Event klik opsional (untuk deteksi klik area gelap di luar dialog)
+         */
+        function tutupMateri(event) {
+            if (event && event.target && event.target.id !== 'modal-materi') {
+                return;
+            }
+
+            const modal = document.getElementById('modal-materi');
+            const frame = document.getElementById('modal-materi-frame');
+
+            if (modal) modal.classList.add('hidden');
+            if (frame) frame.src = '';
+            isModalFullscreen = false;
+            isCurrentGameModal = false;
+            document.body.style.overflow = '';
+        }
+
+        // Sembunyikan indikator loading setelah iframe selesai dimuat
+        const frameMateriEl = document.getElementById('modal-materi-frame');
+        if (frameMateriEl) {
+            frameMateriEl.addEventListener('load', () => {
+                if (!frameMateriEl.getAttribute('src')) return;
+                const loader = document.getElementById('modal-materi-loader');
+                if (loader) loader.classList.add('hidden');
+                if (isCurrentGameModal) {
+                    try {
+                        frameMateriEl.focus();
+                    } catch (e) {
+                        // Abaikan jika fokus lintas-domain dibatasi browser
+                    }
+                }
+            });
+        }
+
+        // Tutup modal saat tombol Escape ditekan
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('modal-materi');
+                if (modal && !modal.classList.contains('hidden')) {
+                    tutupMateri();
+                }
+            }
+        });
+
         // Tangani navigasi Back/Forward browser
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.replace('#', '') || 'beranda';
@@ -428,16 +815,20 @@
 
         if (localStorage.getItem('theme') === 'dark') {
             htmlEl.classList.add('dark');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            if (themeIcon) themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
 
-        themeToggleBtn.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            const isDark = htmlEl.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeIcon.classList.toggle('fa-moon', !isDark);
-            themeIcon.classList.toggle('fa-sun', isDark);
-        });
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                htmlEl.classList.toggle('dark');
+                const isDark = htmlEl.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) {
+                    themeIcon.classList.toggle('fa-moon', !isDark);
+                    themeIcon.classList.toggle('fa-sun', isDark);
+                }
+            });
+        }
     </script>
 </body>
 </html>
